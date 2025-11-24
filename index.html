@@ -251,39 +251,53 @@ How to use: save this as `index.html` and open in a browser. Replace images, tex
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-5 bg-light">
-    <div class="container">
-      <h3 class="mb-4">Get in touch</h3>
-      <div class="row">
-        <div class="col-lg-6 mb-4">
-          <form>
-            <div class="mb-3">
-              <label class="form-label">Name</label>
-              <input type="text" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Email</label>
-              <input type="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Message</label>
-              <textarea class="form-control" rows="4" required></textarea>
-            </div>
-            <button class="btn btn-primary">Send Message</button>
+   <!-- CONTACT FORM -->
+          <form id="contact-form">
+              <div class="mb-3">
+                  <label class="form-label">Your Name</label>
+                  <input type="text" name="user_name" class="form-control" placeholder="Enter Name" required>
+              </div>
+
+              <div class="mb-3">
+                  <label class="form-label">Your Email</label>
+                  <input type="email" name="user_email" class="form-control" placeholder="Enter Email" required>
+              </div>
+
+              <div class="mb-3">
+                  <label class="form-label">Message</label>
+                  <textarea name="message" class="form-control" rows="4" placeholder="Write your message" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
-        </div>
-        <div class="col-lg-6">
-          <div class="card p-3 shadow-sm">
-            <h5>Visit</h5>
-            <p class="mb-1 small text-muted">Showroom: 27 Market St, Your City</p>
-            <p class="mb-1 small text-muted">WhatsApp: <a href="https://wa.me/919384283734" target="_blank">+91 93842 83734</a></p>
-            <p class="mb-0 small text-muted">Mon–Sat: 10:00 — 20:00</p>
-          </div>
-        </div>
+
+          <p class="mt-3 text-center fw-bold" id="result"></p>
       </div>
-    </div>
-  </section>
+  </div>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+      // Initialize EmailJS
+      (function() {
+          emailjs.init("YOUR_PUBLIC_KEY"); // <-- Replace
+      })();
+
+      // Handle Form Submit
+      document.getElementById("contact-form").addEventListener("submit", function(e) {
+          e.preventDefault();
+
+          emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+              .then(function() {
+                  document.getElementById("result").innerHTML =
+                      "🎉 Message Sent Successfully!";
+              }, function(error) {
+                  document.getElementById("result").innerHTML =
+                      "❌ Failed to send message. Please try again.";
+              });
+      });
+  </script>
 
   <!-- Footer -->
   <footer>
