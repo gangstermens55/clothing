@@ -1,0 +1,312 @@
+<!--
+Single-file Bootstrap 5 template for a men's wear landing/catalog page.
+How to use: save this as `index.html` and open in a browser. Replace images, text, and brand colors as needed.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gangster Menswear — Collection</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-blue: #0b4db2; /* Royal Blue */
+      --brand-gold: #c9a23a; /* Gold */
+      --accent-dark: #1f1f1f;
+    }
+
+    body{
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #222;
+      background: linear-gradient(180deg, #fff 0%, #f8f9fa 100%);
+    }
+
+    /* Hero */
+    .hero{
+      background: linear-gradient(90deg, rgba(11,77,178,0.95), rgba(11,77,178,0.85)), url('https://picsum.photos/1400/700?grayscale') center/cover no-repeat;
+      color: white;
+      padding: 6rem 0;
+    }
+
+    .brand-badge{
+      background: var(--brand-gold);
+      color: #111;
+      padding: 0.35rem 0.7rem;
+      font-weight: 700;
+      border-radius: 0.35rem;
+      letter-spacing: 0.06rem;
+    }
+
+    .product-card .price{
+      color: var(--brand-blue);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .product-card .badge-new{
+      background: var(--brand-gold);
+      color: #111;
+    }
+
+    footer{
+      background: #0f1724;
+      color: #cbd5e1;
+      padding: 2.5rem 0;
+    }
+
+    .cta-gradient{
+      background: linear-gradient(90deg, rgba(11,77,178,1), rgba(201,162,58,1));
+      color: white;
+      border-radius: .5rem;
+    }
+
+    /* small responsive tweaks */
+    @media (max-width: 576px){
+      .hero{padding: 3.5rem 0}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <span class="brand-badge">GANGSTER</span>
+        <small class="text-muted">Menswear</small>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#collections">Collections</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-2">
+            <a class="btn btn-outline-primary btn-sm" href="#">Shop Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero text-center text-md-start">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h1 class="display-5 fw-bold">Bold. Luxe. Street.</h1>
+          <p class="lead">Explore the Gangster Menswear collection — crafted for presence, designed for comfort. Premium fabrics, tailored fits, signature gold accents.</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a href="#collections" class="btn btn-lg cta-gradient shadow">Explore Collection</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">Custom Orders</a>
+          </div>
+        </div>
+        <div class="col-md-6 d-none d-md-block text-end">
+          <img src="https://picsum.photos/520/420?random=1" alt="model" class="img-fluid rounded-3 shadow-lg" style="max-width:520px;">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Collections -->
+  <section id="collections" class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h2 class="h3 mb-0">Featured Collection</h2>
+          <small class="text-muted">New arrivals & best sellers</small>
+        </div>
+        <div>
+          <a class="btn btn-sm btn-outline-secondary" href="#">View All</a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="position-relative">
+              <img src="https://picsum.photos/400/420?random=11" class="card-img-top" alt="product">
+              <span class="badge position-absolute top-0 start-0 m-2 badge-new">NEW</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Heritage Bomber Jacket</h5>
+              <p class="text-muted small mb-2">Tailored fit · Premium nylon</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹3,499</div>
+                </div>
+                <div>
+                  <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="https://picsum.photos/400/420?random=12" class="card-img-top" alt="product">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Signature Denim</h5>
+              <p class="text-muted small mb-2">Slim cut · Stretch denim</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹1,799</div>
+                </div>
+                <div>
+                  <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="https://picsum.photos/400/420?random=13" class="card-img-top" alt="product">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Luxury Polo Tee</h5>
+              <p class="text-muted small mb-2">Cotton-piqué · Soft finish</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹899</div>
+                </div>
+                <div>
+                  <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="https://picsum.photos/400/420?random=14" class="card-img-top" alt="product">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Cashmere Scarf</h5>
+              <p class="text-muted small mb-2">Ultra-soft · Winter staple</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹2,299</div>
+                </div>
+                <div>
+                  <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About / Story -->
+  <section id="about" class="py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h3>Our Philosophy</h3>
+          <p class="text-muted">Gangster Menswear blends bold silhouettes with premium materials — inspired by city nights and refined craftsmanship. We focus on limited runs, detailed finishes, and sustainable choices whenever possible.</p>
+          <ul class="list-unstyled small">
+            <li>• Limited edition drops</li>
+            <li>• Ethically sourced materials</li>
+            <li>• Custom tailoring available</li>
+          </ul>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="https://picsum.photos/520/320?random=2" class="img-fluid rounded-3 shadow" alt="about">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5">
+    <div class="container">
+      <div class="p-4 p-md-5 rounded-3 cta-gradient d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div>
+          <h4 class="mb-1">Ready to upgrade your wardrobe?</h4>
+          <p class="mb-0 small">Sign up for exclusive early access to drops and special offers.</p>
+        </div>
+        <form class="d-flex gap-2" style="max-width:560px; width:100%;">
+          <input class="form-control form-control-lg" type="email" placeholder="Enter your email" aria-label="Email">
+          <button class="btn btn-dark btn-lg" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h3 class="mb-4">Get in touch</h3>
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" required></textarea>
+            </div>
+            <button class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <div class="card p-3 shadow-sm">
+            <h5>Visit</h5>
+            <p class="mb-1 small text-muted">Showroom: 27 Market St, Your City</p>
+            <p class="mb-1 small text-muted">WhatsApp: <a href="https://wa.me/919384283734" target="_blank">+91 93842 83734</a></p>
+            <p class="mb-0 small text-muted">Mon–Sat: 10:00 — 20:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="text-white">Gangster Menswear</h5>
+          <p class="small text-muted">© <span id="curYear"></span> Gangster Menswear. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="text-muted small me-3" href="#">Privacy</a>
+          <a class="text-muted small me-3" href="#">Terms</a>
+          <a class="text-muted small" href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // set current year in footer
+    document.getElementById('curYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
